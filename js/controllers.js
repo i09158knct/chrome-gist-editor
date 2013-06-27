@@ -54,6 +54,7 @@ function deleteGist(gistId) {
 function GistListCtrl($scope) {
   $scope.getGistMainFileName = getGistMainFileName;
 
+  $scope.order = 'updated_at';
   $scope.gists = JSON.parse(localStorage.getItem('__gists'));
   user.gists(function(err, gists) {
     $scope.gists = gists;

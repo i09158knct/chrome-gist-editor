@@ -1,5 +1,15 @@
+<div class="actions">
+  <div class="order">
+    Order by:
+    <select ng-model="order">
+      <option value="created_at">Created</option>
+      <option value="updated_at">Updated</option>
+    </select>
+    Reverse: <input type="checkbox" ng-model="reverse">
+  </div>
+</div>
 <ul class="gists">
-  <li class="gist" ng-repeat="gist in gists">
+  <li class="gist" ng-repeat="gist in gists | orderBy:order:!reverse">
     <h3 class="title"><a ng-href="#/gists/{{ gist.id }}">{{ getGistMainFileName(gist) }}</a></h3>
     <p class="description">{{ gist.description }}</p>
   </li>
