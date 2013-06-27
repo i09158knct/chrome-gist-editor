@@ -23,4 +23,10 @@ angular.module('gistviewer', [])
       /^\s*(https?|ftp|mailto|file|chrome-extension):/
     );
   })
+
+  .value('github', new Github({
+    username: localStorage.getItem('__username'),
+    password: localStorage.getItem('__password'),
+    auth: 'basic'
+  }))
   ;

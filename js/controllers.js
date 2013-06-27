@@ -1,15 +1,3 @@
-var username = localStorage.getItem('__username');
-var password = localStorage.getItem('__password');
-
-var github = new Github({
-  username: username,
-  password: password,
-  auth: 'basic'
-});
-
-var user = github.getUser();
-
-
 function getGistMainFileName(gist) {
   if (gist == null) { return 'Loading...'; }
   return Object.keys(gist.files)[0];
@@ -51,12 +39,12 @@ function deleteGist(gistId) {
 }
 
 
-function GistListCtrl($scope) {
+function GistListCtrl($scope, github) {
   $scope.getGistMainFileName = getGistMainFileName;
 
   $scope.order = 'updated_at';
   $scope.gists = JSON.parse(localStorage.getItem('__gists'));
-  user.gists(function(err, gists) {
+  github.getUser().gists(function(err, gists) {
     $scope.gists = gists;
     $scope.$apply();
 
@@ -64,7 +52,7 @@ function GistListCtrl($scope) {
   });
 }
 
-function GistDetailCtrl($scope, $routeParams) {
+function GistDetailCtrl($scope, $routeParams, github) {
   var id = $routeParams.gistId;
   $scope.getGistMainFileName = getGistMainFileName;
   $scope.editGist = editGist;
@@ -79,7 +67,7 @@ function GistDetailCtrl($scope, $routeParams) {
   });
 }
 
-function GistEditCtrl($scope, $routeParams) {
+function GistEditCtrl($scope, $routeParams, github) {
   var id = $routeParams.gistId;
   $scope.getGistMainFileName = getGistMainFileName;
   $scope.showGist = showGist;
