@@ -1,0 +1,26 @@
+<div class="actions">
+  <button class="edit" ng-click="editGist(gist.id)">Edit</button>
+  <button class="delete" ng-click="deleteGist(gist.id)">Delete</button>
+  <button class="wrap_content" ng-click="wrap='wrap'" ng-hide="wrap">Wrap</button>
+  <button class="no_wrap_content" ng-click="wrap=''" ng-show="wrap">No Wrap</button>
+  <a href="#/gists">Gist List</a>
+</div>
+<div class="gist_detail">
+  <h3 class="title"><a ng-href="{{ gist.html_url }}" target="_blank">{{ getGistMainFileName(gist) }}</a></h3>
+
+  <div class="properties">
+    <p class="description">{{ gist.description || 'No description' }}</p>
+    <ul class="meta">
+      <li>created at: {{ gist.created_at | date:'yyyy-MM-dd HH:mm' }}</li>
+      <li>updated at: {{ gist.updated_at | date:'yyyy-MM-dd HH:mm' }}</li>
+    </ul>
+  </div>
+
+  <ul class="files">
+    <li class="file" ng-repeat="body in gist.files">
+      <h4 class="filename">{{ body.filename }}</h4>
+      <p><pre class="content" ng-class="wrap">{{ body.content }}</pre></p>
+    </li>
+  </ul>
+
+</div>

@@ -1,0 +1,16 @@
+{
+  "name": "Gist Editor",
+  "description": "Simple Gist Editor",
+  "version": "1.0.0",
+
+  "permissions": [],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "manifest_version": 2
+}

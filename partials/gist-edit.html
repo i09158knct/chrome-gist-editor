@@ -1,0 +1,26 @@
+<div class="actions">
+  <button class="cancel" ng-click="showGist(gist.id)">Cancel</button>
+  <button class="delete" ng-click="deleteGist(gist.id)">Delete</button>
+</div>
+<div class="gist_detail gist_edit">
+  <h3 class="title">Editting : <a ng-href="{{ gist.html_url }}" target="_blank">{{ getGistMainFileName(gist) }}</a></h3>
+
+  <div class="properties">
+    <input class="description" type="text" placeholder="description" ng-model="gist.description">
+    <ul class="meta">
+      <li>created at: {{ gist.created_at | date:'yyyy-MM-dd HH:mm' }}</li>
+      <li>updated at: {{ gist.updated_at | date:'yyyy-MM-dd HH:mm' }}</li>
+    </ul>
+  </div>
+
+  <ul class="files">
+    <li class="file" ng-repeat="(filename, body) in gist.files">
+      <button class="delete_file" ng-click="deleteFile(filename, gist.files)">Delete File</button>
+      <input class="filename" type="text" ng-model="body.filename">
+      <textarea class="content" ng-model="body.content"></textarea>
+    </li>
+  </ul>
+
+  <button class="add_another_file" ng-click="addAnotherFile()">Add Another File</button>
+  <button class="update" ng-click="update(gist.id)">Update Gist</button>
+</div>

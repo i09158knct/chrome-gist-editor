@@ -1,0 +1,6 @@
+<ul class="gists">
+  <li class="gist" ng-repeat="gist in gists">
+    <h3 class="title"><a ng-href="#/gists/{{ gist.id }}">{{ getGistMainFileName(gist) }}</a></h3>
+    <p class="description">{{ gist.description }}</p>
+  </li>
+</ul>

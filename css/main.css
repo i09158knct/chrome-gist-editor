@@ -1,0 +1,114 @@
+.gists {
+  width: 480px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gists .gist {
+  background-color: #eee;
+  border-top: solid 1px;
+  padding: 0 0 5px 0;
+  margin: 0;
+  font-size: 80%;
+}
+
+.gists .gist .title {
+  padding-left: 5px;
+  margin: 0;
+}
+
+.gists .gist .description {
+  margin: 0 15px;
+  font: small-caption;
+  color: #222;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+
+.gist_detail {
+  background-color: #ccc;
+  width: 480px;
+  margin: 0;
+}
+
+.gist_detail .title {
+  margin: 5px;
+  padding: 0;
+  border-bottom: solid 2px;
+}
+
+.gist_detail .properties {
+  margin: 10px;
+  padding: 0 5px;
+  background-color: #eee;
+  font-size: 80%;
+}
+
+.gist_detail .description {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom: dotted 2px #ccc;
+}
+
+.gist_detail input.description {
+  margin-top: 5px;
+  font-size: 100%;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.gist_detail .meta {
+  margin: 0;
+  padding-left: 25px;
+  padding-bottom: 5px
+}
+
+.gist_detail .files {
+  margin: 5px;
+  padding: 5px;
+  list-style-type: none;
+}
+
+.gist_detail .files .file {
+  background-color: #fff;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: solid 1px #ccc;
+
+}
+
+.gist_detail .file .filename {
+  width: 99%;
+  margin: 0;
+  border-bottom: solid 1px #ccc;
+}
+
+.gist_detail .file input.filename {
+  margin-right: 50px;
+  margin-top: 5px;
+  font-size: 100%;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.gist_detail .file .content {
+  width: 99%;
+  overflow: auto;
+  padding-bottom: 5px
+}
+
+.wrap {
+  white-space: pre-wrap;
+}
+
+.gist_detail .file textarea.content {
+  margin-top: 5px;
+  height: 512px;
+}
